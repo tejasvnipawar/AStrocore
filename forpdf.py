@@ -9,9 +9,15 @@ reader = PdfReader(path)
 
 number_of_pages = len(reader.pages)
 
-print(number_of_pages)
-page = reader.pages[5]   # first page
+# print(number_of_pages)
+# page = reader.pages[5]   # first page
 
-text = page.extract_text()
+# text = page.extract_text()
+num, num1 = map(int, input("enter").split())
+full_text = path
 
-print(text)
+for page in reader.pages:
+    full_text += page.extract_text()
+
+print(full_text[num:num1])
+
